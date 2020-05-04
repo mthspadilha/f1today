@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <meta  charset="UTF-8">
+        <title> Is there a Formula 1 race Today? </title>
+    </head>    
+        <body>
+            <div id='bigTitle' align='center' fpnt='arial'><b><h1>Is there a Formula 1 race Today?</h1></b>
+            <p id="ansewr" align='center'> NO </p>
+            <p align='center'> Today's date(mm/dd/aaaa):</p> 
+            <input type="text" id="todaydate" disabled="true" value="">
+            <p align='center'> Days withou a single F1 race:</p>
+            <input type="text" id='withoutf1' disabled="true" value="">
+            </div>
+            
+       
+       
+        <style>
+            #bigTitle{
+                color: black;
+                font-size: 20px;
+                text-align: center;
+            }
+            #ansewr{
+                color: red;
+                font-size: 48px;
+                text-align: center;
+                padding-top: 5px;
+                font-weight: bolder;
+            }
+            #bottom{
+                font-size: 10px;
+                position: bottom;
+                align-self: center;
+                padding-top: 50px;
+                table-layout: fixed;
+                
+            }
+        </style>   
+
+
+            
+        <script type="text/javascript">
+            
+            function today(){
+            var data = new Date();
+            var dia  = data.getDate();
+            var mes  = data.getMonth();
+            var ano  = data.getFullYear();
+            
+            var todaydate = dia+'/'+mes+'/'+ano;
+            document.getElementById('todaydate').setAttribute("value", todaydate);
+
+            return todaydate;
+
+            }
+            
+            var todayday = today();
+            console.log(todayday);
+
+            
+
+            function daysSCPMFPFGP(){ //SCPMFPFGP Stands for 'Since Covid-19 Pandemic Makes FIA post-pone first grand prix of 2020'
+                const startThisYear = new Date('2020-3-15'); //start of 2020 season
+                const now = new Date(); // today's date 
+                const diff = Math.abs(now.getTime() -startThisYear.getTime());
+                const days = Math.ceil(diff / (1000 * 60 * 60 * 24 ) - 1);
+                
+                
+                return days;
+            }
+
+
+            function daysWithoutF1(){
+                const now = new Date(); // today's date 
+                const past = new Date('2019-12-1'); //last gp from 2019 seasson date
+                const diff = Math.abs(now.getTime() - past.getTime());
+                const days = Math.ceil(diff / (1000 * 60 * 60 * 24 ) - 1);
+                document.getElementById('withoutf1').setAttribute("value", days)
+                return days;
+            };
+            
+                var diassemf1 = daysWithoutF1();
+                var diassemf1esseano = daysSCPMFPFGP();
+
+                console.log(diassemf1);
+                console.log(diassemf1esseano);
+        
+
+        </script>
+            
+        </body>
+    <div id="bottom" align='center'>Matheus Padilha - <a href="http://github://realpadda" target="_blank">github/realPadda</a></div>
+
+</html>
