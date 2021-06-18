@@ -6,7 +6,7 @@
 - If there is no race, inform how many days since the last one.
 
 Obs: 
-*Its a very simple project, just for pratice, some skills.*
+*ABANDONED PROJECT AS F1 RETURNED TO 2020 SEASON X)*
 
 :+1:
  
